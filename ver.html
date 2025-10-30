@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión de Pedidos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#137fec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Lexend", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex items-center justify-between gap-4 bg-background-light/80 p-4 pb-2 backdrop-blur-sm dark:bg-background-dark/80">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<button class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-transparent text-gray-800 dark:text-gray-200">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+</div>
+<h1 class="flex-1 text-center text-lg font-bold tracking-tight text-gray-900 dark:text-white">Gestión de Pedidos</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</div>
+</div>
+<!-- Chips for Filtering -->
+<div class="flex gap-3 overflow-x-auto p-4 pt-2">
+<div class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-primary pl-4 pr-4">
+<p class="text-sm font-medium text-white">Todos</p>
+</div>
+<div class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-gray-200 pl-4 pr-4 dark:bg-gray-700">
+<p class="text-sm font-medium text-gray-800 dark:text-gray-200">Pendientes</p>
+</div>
+<div class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-gray-200 pl-4 pr-4 dark:bg-gray-700">
+<p class="text-sm font-medium text-gray-800 dark:text-gray-200">Aprobados</p>
+</div>
+<div class="flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-gray-200 pl-4 pr-4 dark:bg-gray-700">
+<p class="text-sm font-medium text-gray-800 dark:text-gray-200">Entregados</p>
+</div>
+</div>
+<!-- List of Orders -->
+<div class="flex flex-col gap-3 px-4 pb-4">
+<!-- Order Card 1 -->
+<div class="flex flex-col gap-4 rounded-xl bg-white p-4 dark:bg-gray-800">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-base font-medium text-gray-900 dark:text-white">Profesor: Juan Pérez</p>
+<p class="text-sm font-normal text-gray-500 dark:text-gray-400">15/10/2023</p>
+</div>
+<div class="flex h-7 items-center justify-center gap-2 rounded-full bg-yellow-100 px-3 dark:bg-yellow-900/50">
+<p class="text-xs font-medium text-yellow-700 dark:text-yellow-400">Pendiente</p>
+</div>
+</div>
+<p class="text-sm font-normal text-gray-500 dark:text-gray-400">3 Cajas de lápices, 2 Resmas de papel, 50 carpetas...</p>
+<div class="h-px w-full bg-gray-200 dark:bg-gray-700"></div>
+<div class="flex justify-end gap-2">
+<button class="text-primary dark:text-primary-400 flex h-9 items-center justify-center rounded-lg bg-primary/10 px-4 text-sm font-medium dark:bg-primary/20">Editar</button>
+<button class="text-red-600 dark:text-red-400 flex h-9 items-center justify-center rounded-lg bg-red-500/10 px-4 text-sm font-medium dark:bg-red-500/20">Eliminar</button>
+</div>
+</div>
+<!-- Order Card 2 -->
+<div class="flex flex-col gap-4 rounded-xl bg-white p-4 dark:bg-gray-800">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-base font-medium text-gray-900 dark:text-white">Profesora: Ana García</p>
+<p class="text-sm font-normal text-gray-500 dark:text-gray-400">14/10/2023</p>
+</div>
+<div class="flex h-7 items-center justify-center gap-2 rounded-full bg-green-100 px-3 dark:bg-green-900/50">
+<p class="text-xs font-medium text-green-700 dark:text-green-400">Entregado</p>
+</div>
+</div>
+<p class="text-sm font-normal text-gray-500 dark:text-gray-400">5 tubos de ensayo, 1 microscopio, batas de laboratorio...</p>
+<div class="h-px w-full bg-gray-200 dark:bg-gray-700"></div>
+<div class="flex justify-end gap-2">
+<button class="text-primary dark:text-primary-400 flex h-9 items-center justify-center rounded-lg bg-primary/10 px-4 text-sm font-medium dark:bg-primary/20">Ver Detalles</button>
+</div>
+</div>
+<!-- Order Card 3 -->
+<div class="flex flex-col gap-4 rounded-xl bg-white p-4 dark:bg-gray-800">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-base font-medium text-gray-900 dark:text-white">Profesor: Carlos Ruiz</p>
+<p class="text-sm font-normal text-gray-500 dark:text-gray-400">12/10/2023</p>
+</div>
+<div class="flex h-7 items-center justify-center gap-2 rounded-full bg-blue-100 px-3 dark:bg-blue-900/50">
+<p class="text-xs font-medium text-blue-700 dark:text-blue-400">Aprobado</p>
+</div>
+</div>
+<p class="text-sm font-normal text-gray-500 dark:text-gray-400">10 balones de baloncesto, 2 redes, 1 inflador.</p>
+<div class="h-px w-full bg-gray-200 dark:bg-gray-700"></div>
+<div class="flex justify-end gap-2">
+<button class="text-primary dark:text-primary-400 flex h-9 items-center justify-center rounded-lg bg-primary/10 px-4 text-sm font-medium dark:bg-primary/20">Editar</button>
+<button class="text-red-600 dark:text-red-400 flex h-9 items-center justify-center rounded-lg bg-red-500/10 px-4 text-sm font-medium dark:bg-red-500/20">Eliminar</button>
+</div>
+</div>
+<!-- Empty State -->
+<div class="flex flex-col items-center justify-center gap-4 rounded-xl border border-dashed border-gray-300 bg-white/50 p-8 text-center dark:border-gray-700 dark:bg-gray-800/50 mt-4">
+<div class="flex size-16 items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700">
+<span class="material-symbols-outlined text-4xl text-gray-500 dark:text-gray-400">inventory_2</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-base font-semibold text-gray-900 dark:text-white">No hay más pedidos</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Pulsa el botón (+) para crear uno nuevo.</p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

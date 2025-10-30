@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Editar Pedido</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light dark:bg-background-dark p-4 pb-3 justify-between shadow-sm">
+<button class="text-slate-800 dark:text-slate-200 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Editar Pedido</h1>
+<div class="size-10 shrink-0"></div> <!-- Spacer for centering title -->
+</div>
+<main class="flex-grow flex flex-col pb-28">
+<!-- Form Fields -->
+<div class="p-4">
+<label class="flex flex-col w-full">
+<p class="text-slate-900 dark:text-slate-100 text-base font-medium leading-normal pb-2">Profesor</p>
+<div class="relative">
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 focus:border-primary h-14 placeholder:text-slate-500 dark:placeholder:text-slate-400 p-3.5 text-base font-normal leading-normal appearance-none">
+<option value="ana-lopez">Ana López</option>
+<option value="carlos-gomez">Carlos Gómez</option>
+<option value="maria-fernandez">María Fernández</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 pointer-events-none">unfold_more</span>
+</div>
+</label>
+</div>
+<!-- Materials List Header -->
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Materiales Solicitados</h2>
+<!-- Materials List -->
+<div class="flex flex-col gap-1 px-2">
+<!-- List Item 1: Cuadernos -->
+<div class="flex items-center gap-4 bg-transparent dark:bg-transparent px-2 min-h-16 justify-between group">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-slate-800 dark:text-slate-200 flex items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-700 shrink-0 size-11">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<p class="text-slate-800 dark:text-slate-200 text-base font-normal leading-normal flex-1 truncate">Cuadernos</p>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<div class="flex items-center gap-2 text-slate-900 dark:text-slate-100 bg-slate-200 dark:bg-slate-700 rounded-full">
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors cursor-pointer">-</button>
+<input class="text-base font-medium leading-normal w-5 p-0 text-center bg-transparent focus:outline-none border-none [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" type="number" value="5"/>
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors cursor-pointer">+</button>
+</div>
+<button class="text-red-500 flex size-8 items-center justify-center rounded-full hover:bg-red-500/10 transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</div>
+<!-- List Item 2: Lápices -->
+<div class="flex items-center gap-4 bg-transparent dark:bg-transparent px-2 min-h-16 justify-between group">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-slate-800 dark:text-slate-200 flex items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-700 shrink-0 size-11">
+<span class="material-symbols-outlined">edit</span>
+</div>
+<p class="text-slate-800 dark:text-slate-200 text-base font-normal leading-normal flex-1 truncate">Lápices</p>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<div class="flex items-center gap-2 text-slate-900 dark:text-slate-100 bg-slate-200 dark:bg-slate-700 rounded-full">
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors cursor-pointer">-</button>
+<input class="text-base font-medium leading-normal w-5 p-0 text-center bg-transparent focus:outline-none border-none [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" type="number" value="10"/>
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors cursor-pointer">+</button>
+</div>
+<button class="text-red-500 flex size-8 items-center justify-center rounded-full hover:bg-red-500/10 transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</div>
+<!-- List Item 3: Borradores -->
+<div class="flex items-center gap-4 bg-transparent dark:bg-transparent px-2 min-h-16 justify-between group">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-slate-800 dark:text-slate-200 flex items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-700 shrink-0 size-11">
+<span class="material-symbols-outlined">ink_eraser</span>
+</div>
+<p class="text-slate-800 dark:text-slate-200 text-base font-normal leading-normal flex-1 truncate">Borradores</p>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<div class="flex items-center gap-2 text-slate-900 dark:text-slate-100 bg-slate-200 dark:bg-slate-700 rounded-full">
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors cursor-pointer">-</button>
+<input class="text-base font-medium leading-normal w-5 p-0 text-center bg-transparent focus:outline-none border-none [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" type="number" value="3"/>
+<button class="text-base font-medium leading-normal flex h-8 w-8 items-center justify-center rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors cursor-pointer">+</button>
+</div>
+<button class="text-red-500 flex size-8 items-center justify-center rounded-full hover:bg-red-500/10 transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Add Material Button -->
+<div class="px-4 pt-4">
+<button class="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed border-primary/50 bg-primary/10 dark:bg-primary/20 px-4 py-3 text-primary dark:text-slate-100 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="text-base font-semibold">Añadir Material</span>
+</button>
+</div>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800">
+<button class="w-full bg-primary text-white font-bold py-4 px-4 rounded-xl shadow-lg shadow-primary/30 hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/40 transition-all duration-300">Guardar Cambios</button>
+</div>
+</div>
+</body></html>
